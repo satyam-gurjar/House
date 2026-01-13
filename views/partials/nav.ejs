@@ -12,27 +12,27 @@
 
       <a href="/"
          class="transition
-         <%= currentPage === 'Home'
+         <%= currentPage === 'index'
               ? 'text-red-500 font-semibold'
               : 'hover:text-red-500' %>">
         Home
       </a>
 
-      <!-- <a href="/about"
+      <a href="/favourites"
          class="transition
-         <%= currentPage === 'About'
+         <%= currentPage === 'Favourites'
               ? 'text-red-500 font-semibold'
               : 'hover:text-red-500' %>">
-        About
+        Favourite
       </a>
 
-      <a href="/contact"
+      <a href="/homes"
          class="transition
-         <%= currentPage === 'Contact'
+         <%= currentPage === 'Home'
               ? 'text-red-500 font-semibold'
               : 'hover:text-red-500' %>">
-        Contact
-      </a> -->
+        Homes-list
+      </a>
 
       <a href="/host/add-home"
          class="transition
@@ -48,6 +48,14 @@
               ? 'text-red-500 font-semibold'
               : 'hover:text-red-500' %>">
         Bookings
+      </a>
+
+       <a href="/host-home-list"
+         class="transition
+         <%= currentPage === 'host-homes'
+              ? 'text-red-500 font-semibold'
+              : 'hover:text-red-500' %>">
+        host-Homes-list
       </a>
 
     </nav>

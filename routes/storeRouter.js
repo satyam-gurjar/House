@@ -5,10 +5,14 @@ const storeRouter = express.Router();
 //Local modules
 const homesControler = require('../controller/storeController')
 
-console.log("getHomes is:", homesControler.getHomes);
-storeRouter.get("/",homesControler.getHomes);
-console.log('hello')
+
+storeRouter.get("/",homesControler.getIndex);
+
+storeRouter.get("/homes", homesControler.getHomes);
+
 storeRouter.get("/bookings", homesControler.getBookings);
+
+storeRouter.get("/favourites", homesControler.getFavouriteList);
 
 
 module.exports = storeRouter;
