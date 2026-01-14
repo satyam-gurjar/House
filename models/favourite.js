@@ -7,10 +7,10 @@ const rootDir = require('../utils/pathUtil')
 
 module.exports = class Favourite {
 
-  static addToFavourite(id,callback) {
+  static addToFavourite(homeId,callback) {
     Favourite.getFavourites((favourites)=> {
       if(favourites.includes(homeId)){
-        console.log("home is favourites marked already")
+        callback("home is favourites marked already")
       }
       else
       {

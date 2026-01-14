@@ -17,7 +17,7 @@
     </div>
 
     <!-- Homes Section -->
-    <% if (registeredHomes.length === 0) { %>
+    <% if (favouriteHomes.length === 0) { %>
       <div class="text-center text-gray-500 text-lg">
         No homes registered yet 🏡 <br />
         Be the first host!
@@ -26,7 +26,7 @@
 
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
-        <% registeredHomes.forEach(home => { %>
+        <% favouriteHomes.forEach(home => { %>
 
           <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden">
 

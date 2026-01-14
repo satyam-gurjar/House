@@ -1,3 +1,4 @@
+const Favourite = require('../models/favourite');
 const Home = require('../models/homes');
 
 
@@ -32,20 +33,29 @@ exports.getBookings = (req, res, next) => {
 };
 
 exports.getFavouriteList = (req, res, next) => {
-  Home.fetchAll((registeredHomes) =>
+  Favourite.getFavourites((favourites) =>{
+  Home.fetchAll((registeredHomes) =>{
+    const favouriteHomes = registeredHomes.filter(home => 
+      favourites.includes(home.id));
     res.render('store/Favourite-list', {
-      registeredHomes: registeredHomes,
+      favouriteHomes : favouriteHomes,
       pageTitle: 'My Favourites',
       currentPage: 'Favourites'
     })
-  );
+  });
+});
 
 };
 
 
 exports.postAddToFavourite = (req,res,next) => {
   console.log("favourites", req.body);
-  res.redirect("/favourites")
+  Favourite.addToFavourite(req.body.homeId,error => {
+    if(error){
+      console.log('error by marking favourite',error)
+    }
+    res.redirect("/favourites")
+  })
 }
 
 exports.getHomeDetails = (req, res, next) => {
