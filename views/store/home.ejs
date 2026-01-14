@@ -65,12 +65,9 @@
                   ₹<%= home.price %>
                   <span class="text-sm text-red-500">/ night</span>
                 </p>
-
-                <button
-                  class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm
-                         hover:bg-red-600 transition active:scale-95">
-                   Book
-                </button>
+                <a  class="bg-yellow-400 text-white px-4 py-2 rounded-lg text-sm
+                         hover:bg-yellow-500 transition active:scale-95" href="/homes/<%= home.id %>">view</a>
+                <%- include('../partials/favourite',{home:home}) %>
               </div>
 
             </div>

@@ -1,5 +1,22 @@
 [
   {
+    "id": "1",
+    "houseName": "satyam homes",
+    "price": "899",
+    "location": "bhopal",
+    "Rating": "5",
+    "PhotoURL": "https://imgs.search.brave.com/Zz1I_GmcSoM-oU2oSRoicbCjRGYv-F19aVFu0FOzN7M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jb250/ZW50LmpkbWFnaWNi/b3guY29tL3YyL2Nv/bXAvdGhpcnV2YW5h/bnRoYXB1cmFtL3oy/LzA0NzFweDQ3MS54/NDcxLjI0MDMzMDE4/NDIyNS5zMnoyL2Nh/dGFsb2d1ZS9ibmIt/aG9tZXMta3VsYXRo/b29yLXRoaXJ1dmFu/YW50aGFwdXJhbS1i/ZWQtYW5kLWJyZWFr/ZmFzdC0yb2xtNHNk/a255LTI1MC5qcGc_/dz0zODQwJnE9NzU"
+  },
+  {
+    "id": "2",
+    "houseName": "ss",
+    "price": "555",
+    "location": "jaypur",
+    "Rating": "4.5",
+    "PhotoURL": "https://imgs.search.brave.com/Zz1I_GmcSoM-oU2oSRoicbCjRGYv-F19aVFu0FOzN7M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jb250/ZW50LmpkbWFnaWNi/b3guY29tL3YyL2Nv/bXAvdGhpcnV2YW5h/bnRoYXB1cmFtL3oy/LzA0NzFweDQ3MS54/NDcxLjI0MDMzMDE4/NDIyNS5zMnoyL2Nh/dGFsb2d1ZS9ibmIt/aG9tZXMta3VsYXRo/b29yLXRoaXJ1dmFu/YW50aGFwdXJhbS1i/ZWQtYW5kLWJyZWFr/ZmFzdC0yb2xtNHNk/a255LTI1MC5qcGc_/dz0zODQwJnE9NzU"
+  },
+  {
+    "id": 3,
     "houseName": "satyam homes",
     "price": "899",
     "location": "bhopal",
@@ -28,17 +45,18 @@
     "PhotoURL": "https://imgs.search.brave.com/Zz1I_GmcSoM-oU2oSRoicbCjRGYv-F19aVFu0FOzN7M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jb250/ZW50LmpkbWFnaWNi/b3guY29tL3YyL2Nv/bXAvdGhpcnV2YW5h/bnRoYXB1cmFtL3oy/LzA0NzFweDQ3MS54/NDcxLjI0MDMzMDE4/NDIyNS5zMnoyL2Nh/dGFsb2d1ZS9ibmIt/aG9tZXMta3VsYXRo/b29yLXRoaXJ1dmFu/YW50aGFwdXJhbS1i/ZWQtYW5kLWJyZWFr/ZmFzdC0yb2xtNHNk/a255LTI1MC5qcGc_/dz0zODQwJnE9NzU"
   },
   {
-    "houseName": "satyam homes",
-    "price": "899",
-    "location": "bhopal",
-    "Rating": "5",
-    "PhotoURL": "https://imgs.search.brave.com/Zz1I_GmcSoM-oU2oSRoicbCjRGYv-F19aVFu0FOzN7M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jb250/ZW50LmpkbWFnaWNi/b3guY29tL3YyL2Nv/bXAvdGhpcnV2YW5h/bnRoYXB1cmFtL3oy/LzA0NzFweDQ3MS54/NDcxLjI0MDMzMDE4/NDIyNS5zMnoyL2Nh/dGFsb2d1ZS9ibmIt/aG9tZXMta3VsYXRo/b29yLXRoaXJ1dmFu/YW50aGFwdXJhbS1i/ZWQtYW5kLWJyZWFr/ZmFzdC0yb2xtNHNk/a255LTI1MC5qcGc_/dz0zODQwJnE9NzU"
+    "houseName": "Summer Home",
+    "price": "1999",
+    "location": "Jaypur",
+    "Rating": "4.9",
+    "PhotoURL": "https://search.brave.com/images?q=homes+img&context=W3sic3JjIjoiaHR0cHM6Ly9jZG4uY3JlYXRlLnZpc3RhLmNvbS9hcGkvbWVkaWEvc21hbGwvODY1Njg5MS9zdG9jay1waG90by1ob21lLXdpdGgtY29sdW1uLWVudHJ5IiwidGV4dCI6IkhvbWUgd2l0aCBjb2x1bW4gZW50cnkgLSBQaG90bywgSW1hZ2UiLCJwYWdlX3VybCI6Imh0dHBzOi8vY3JlYXRlLnZpc3RhLmNvbS9waG90b3MvaG91c2UvIn1d&sig=6f521917754e4fe7eae7ed87a2a3a1e61dc00dd5ff2f488982619f43b8d23884&nonce=b3cb28675ad4968c2d17c587cbf98c35&source=imageCluster"
   },
   {
-    "houseName": "ss",
-    "price": "555",
-    "location": "jaypur",
-    "Rating": "4.5",
-    "PhotoURL": "https://imgs.search.brave.com/Zz1I_GmcSoM-oU2oSRoicbCjRGYv-F19aVFu0FOzN7M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jb250/ZW50LmpkbWFnaWNi/b3guY29tL3YyL2Nv/bXAvdGhpcnV2YW5h/bnRoYXB1cmFtL3oy/LzA0NzFweDQ3MS54/NDcxLjI0MDMzMDE4/NDIyNS5zMnoyL2Nh/dGFsb2d1ZS9ibmIt/aG9tZXMta3VsYXRo/b29yLXRoaXJ1dmFu/YW50aGFwdXJhbS1i/ZWQtYW5kLWJyZWFr/ZmFzdC0yb2xtNHNk/a255LTI1MC5qcGc_/dz0zODQwJnE9NzU"
+    "houseName": "Hawa Mahal",
+    "price": "2444",
+    "location": "Udaypur",
+    "Rating": "4.4",
+    "PhotoURL": "https://search.brave.com/images?q=homes+img&context=W3sic3JjIjoiaHR0cHM6Ly9jZG4uY3JlYXRlLnZpc3RhLmNvbS9hcGkvbWVkaWEvc21hbGwvODY1Njg5MS9zdG9jay1waG90by1ob21lLXdpdGgtY29sdW1uLWVudHJ5IiwidGV4dCI6IkhvbWUgd2l0aCBjb2x1bW4gZW50cnkgLSBQaG90bywgSW1hZ2UiLCJwYWdlX3VybCI6Imh0dHBzOi8vY3JlYXRlLnZpc3RhLmNvbS9waG90b3MvaG91c2UvIn1d&sig=6f521917754e4fe7eae7ed87a2a3a1e61dc00dd5ff2f488982619f43b8d23884&nonce=b3cb28675ad4968c2d17c587cbf98c35&source=imageCluster",
+    "id": "0.19520119066330732"
   }
 ]
