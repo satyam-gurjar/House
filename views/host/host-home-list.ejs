@@ -66,16 +66,18 @@
                   <span class="text-sm text-red-500">/ night</span>
                 </p>
 
-                <button
-                  class="bg-blue-500 text-white ml-0.5 px-4 py-2 rounded-lg text-sm
-                         hover: bg-blue-600 transition active:scale-95">
-                   Edit
-                </button>
-                <button
+                <a class="bg-blue-500 text-white ml-0.5 px-4 py-2 rounded-lg text-sm
+                         hover: bg-blue-600 transition active:scale-95" href="/host/edit-home/<%=home.id%>?editing=true">Edit</a>
+               
+               
+                <form action="/host/delete-home/<%= home.id %>" method="POST">
+                  <button
+                  type="submit"
                   class="bg-red-500 text-white mr-0 px-4 py-2 rounded-lg text-sm
                          hover:bg-red-600 transition active:scale-95">
                    Delete
                 </button>
+                </form>
               </div>
 
 

@@ -64,10 +64,15 @@
                 </p>
 
                 <button
-                  class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm
-                         hover:bg-red-600 transition active:scale-95">
+                  class="bg-green-500 text-white px-4 py-2 rounded-lg text-sm
+                         hover:bg-green-600 transition active:scale-95">
                    Book
                 </button>
+
+                <form action="/favourites/delete/<%= home.id %>" method="POST">
+                  <button type="submit"  class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm
+                         hover:bg-red-600 transition active:scale-95">Remove</button>
+                </form>
               </div>
 
             </div>
