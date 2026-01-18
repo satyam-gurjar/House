@@ -71,7 +71,7 @@ AIRBNB/
 ```bash
 git clone https://github.com/satyam-gurjar/airbnb_backend.git
 cd airbnb_backend
- 
+ ```
 ## Install dependencies
 ```bash
 npm install
