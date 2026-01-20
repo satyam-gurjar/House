@@ -1,3 +1,4 @@
+const { ObjectId } = require("mongodb");
 const { getDb } = require("../utils/Databaseutil");
 
 
@@ -7,21 +8,29 @@ module.exports = class Favourite {
     this.houseId = houseId;
   }
 
-  save(){
+  save() {
     const db = getDb();
-    return db.collection('favourites').insertOne(this);
-  }
+    return db.collection('favourites').findOne({ houseId: this.houseId })
+      .then(existingFav => {
+        if (!existingFav) {
+          return db.collection('favourites').insertOne(this);
+        }
+        return Promise.resolve();
+      })
+  };
 
 
   static getFavourites() {
     const db = getDb();
-    return db.collection('homes').find().toArray();
+    return db.collection('favourites').find().toArray();
 
 
   };
 
-  static DeleteById(delHomeId, callback) {
-  
+  static DeleteById(delHomeId) {
+    const db = getDb();
+    return db.collection('favourites')
+      .deleteOne({ houseId: delHomeId });
   }
 
 };

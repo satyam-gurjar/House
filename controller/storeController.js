@@ -34,10 +34,11 @@ exports.getBookings = (req, res, next) => {
 
 exports.getFavouriteList = (req, res, next) => {
   Favourite.getFavourites().then(favourites => {
+    favourites = favourites.map(fav => fav.houseId)
     Home.fetchAll().then(registeredHomes => {
-      
+      console.log(favourites);
       const favouriteHomes = registeredHomes.filter(home =>
-        favourites.includes(home._id));
+      favourites.includes(home._id.toString()));
       res.render('store/Favourite-list', {
         favouriteHomes: favouriteHomes,
         pageTitle: 'My Favourites',
@@ -63,12 +64,13 @@ exports.postAddToFavourite = (req, res, next) => {
 
 exports.postRemoveFromFavourite = (req, res, next) => {
   const homeId = req.params.homeId;
-  Favourite.DeleteById(homeId, error => {
-    if (error) {
-      console.log("Error while removing from favourites", error)
-    }
+  Favourite.DeleteById(homeId).then(result => {
+    console.log("add t0 favourite")
+  }).catch(err => {
+    console.log("errror add to favourites :", err)
+  }).finally(() => {
     res.redirect("/favourites")
-  })
+  });
 }
 
 exports.getHomeDetails = (req, res, next) => {
