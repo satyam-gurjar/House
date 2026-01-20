@@ -1,5 +1,5 @@
  <form action="/favourites" method="POST">
-        
+         <input type="hidden" name="homeId" value="<%= home._id %>">
         <button
           type="submit"
           class="flex items-center gap-2 text-gray-600 border border-gray-300
@@ -8,6 +8,6 @@
         >
           ❤️ Save
         </button>
-        <input type="hidden" name="homeId" value="<%= home.id %>">
+       
 
       </form>

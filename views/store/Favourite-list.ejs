@@ -32,8 +32,8 @@
 
             <!-- Image -->
             <img 
-              src="<%= home.PhotoURL %>" 
-              alt="<%= home.houseName %>" 
+              src="<%= home.PhotoUrl %>" 
+              alt="<%= home.house_name %>" 
               class="h-48 w-full object-cover"
             />
 
@@ -43,7 +43,7 @@
               <!-- Title & Rating -->
               <div class="flex justify-between items-center mb-2">
                 <h3 class="text-lg font-semibold text-gray-800">
-                  <%= home.houseName %>
+                  <%= home.house_name %>
                 </h3>
 
                 <span class="flex items-center text-sm font-medium text-gray-700">
@@ -69,7 +69,7 @@
                    Book
                 </button>
 
-                <form action="/favourites/delete/<%= home.id %>" method="POST">
+                <form action="/favourites/delete/<%= home._id %>" method="POST">
                   <button type="submit"  class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm
                          hover:bg-red-600 transition active:scale-95">Remove</button>
                 </form>
