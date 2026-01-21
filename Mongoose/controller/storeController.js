@@ -7,7 +7,8 @@ exports.getIndex = (req, res, next) => {
     res.render('store/index', {
       registeredHomes: registeredHomes,
       pageTitle: 'airbnb Home',
-      currentPage: 'index'
+      currentPage: 'index',
+      isLoggedIn: req.session.isLoggedIn,
     })
   });
 };
@@ -18,7 +19,8 @@ exports.getHomes = (req, res, next) => {
     res.render('store/home', {
       registeredHomes: registeredHomes,
       pageTitle: 'airbnb Home',
-      currentPage: 'Home'
+      currentPage: 'Home',
+      isLoggedIn: req.session.isLoggedIn,
     })
   });
 };
@@ -27,6 +29,7 @@ exports.getBookings = (req, res, next) => {
   res.render('store/bookings', {
     pageTitle: 'My Bookings',
     currentPage: 'bookings',
+    isLoggedIn: req.session.isLoggedIn,
   });
 };
 
@@ -39,7 +42,8 @@ exports.getFavouriteList = (req, res, next) => {
       res.render('store/Favourite-list', {
         favouriteHomes: favouriteHomes,
         pageTitle: 'My Favourites',
-        currentPage: 'Favourites'
+        currentPage: 'Favourites',
+        isLoggedIn: req.session.isLoggedIn,
       })
     });
 }
@@ -53,12 +57,11 @@ exports.postAddToFavourite = (req, res, next) => {
   Favourite.findOne({ houseId: homeId })
     .then((fav) => {
       if (fav) {
-        console.log('already mark ad favourite');
         return res.redirect("/favourites");
       } else {
         fav = new Favourite({ houseId: homeId });
         fav.save().then((result) => {
-          console.log("fav added ", result);
+      
         })
       }
       res.redirect("/favourites")
@@ -73,7 +76,6 @@ exports.postRemoveFromFavourite = (req, res, next) => {
   const homeId = req.params.homeId;
   Favourite.findOneAndDelete({ houseId: homeId })
     .then(result => {
-      console.log("add t0 favourite")
     }).catch(err => {
       console.log("errror add to favourites :", err)
     }).finally(() => {
@@ -85,7 +87,6 @@ exports.getHomeDetails = (req, res, next) => {
   const homeId = req.params.homeId;
   Home.findById(homeId).then(home => {
     if (!home) {
-      console.log('home not found')
       res.redirect("/homes")
     }
     else {
@@ -93,6 +94,7 @@ exports.getHomeDetails = (req, res, next) => {
         home: home,
         pageTitle: "Home Detials",
         currentPage: "Home",
+        isLoggedIn: req.session.isLoggedIn,
       })
     }
   });
