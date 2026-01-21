@@ -1,57 +1,40 @@
 <%- include('../partials/head') %>
-<body class="bg-gray-50 min-h-screen flex flex-col">
 
-  <!-- Header -->
-<%- include('../partials/nav') %>
+  <body class="bg-gray-50 min-h-screen flex flex-col">
 
-  <!-- Main -->
-  <main class="flex-grow flex items-center justify-center px-4">
-    <div class="bg-white p-8 rounded-xl shadow-lg max-w-md w-full">
+    <!-- Header -->
+    <%- include('../partials/nav') %>
 
-      <form
-        action="/login"
-        method="POST"
-        class="space-y-6"
-      >
-        <!-- Input -->
-        <div>
-           <label class="block text-black  font-extrabold text-2xl text-center mb-3">
-            LogIn 
-           </label>
-          <input
-            type="text"
-            name="username"
-            placeholder="Email/username"
-            required
-            class="w-full border border-gray-300 rounded-lg px-4 py-2
-                   focus:outline-none m-1.5 focus:ring-2 focus:ring-red-400"
-          />
-            <input
-            type="password"
-            name="password"
-            placeholder="Enter Password"
-            required
-            class="w-full border border-gray-300 rounded-lg px-4 py-2
-                   focus:outline-none m-1.5 focus:ring-2 focus:ring-red-400"
-          />
-           
+      <!-- Main -->
+      <main class="flex-grow flex items-center justify-center px-4">
+        <div class="bg-white p-8 rounded-xl shadow-lg max-w-md w-full">
+
+          <form action="/login" method="POST" class="space-y-6">
+            <!-- Input -->
+            <div>
+              <label class="block text-black  font-extrabold text-2xl text-center mb-3">
+                LogIn
+              </label>
+              <input type="text" name="username" placeholder="Email/username" required class="w-full border border-gray-300 rounded-lg px-4 py-2
+                   focus:outline-none m-1.5 focus:ring-2 focus:ring-red-400" />
+              <input type="password" name="password" placeholder="Enter Password" required class="w-full border border-gray-300 rounded-lg px-4 py-2
+                   focus:outline-none m-1.5 focus:ring-2 focus:ring-red-400" />
+
+            </div>
+
+            <!-- Submit Button -->
+            <input type="submit" value="LogIn" class="w-full bg-red-500 text-white font-semibold py-3 rounded-lg
+         hover:bg-red-600 transition shadow-md" />
+          </form>
+
         </div>
+      </main>
 
-        <!-- Submit Button -->
-        <input
-          type="submit" value="LogIn"
-          class="w-full bg-red-500 text-white font-semibold py-3 rounded-lg
-         hover:bg-red-600 transition shadow-md"
-        />
-      </form>
+      <!-- Footer -->
+      <footer class="text-center text-sm text-gray-500 py-4">
+        © 2026 Airbnb Clone
+      </footer>
 
-    </div>
-  </main>
+  </body>
 
-  <!-- Footer -->
-  <footer class="text-center text-sm text-gray-500 py-4">
-    © 2026 Airbnb Clone
-  </footer>
-
-</body>
-</html>
+  </html>

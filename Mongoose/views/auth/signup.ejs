@@ -15,7 +15,22 @@
           </h2>
 
           <form action="/signup" method="POST" class="space-y-4">
+            <!-- errors -->
+            <div>
+              <% if (typeof errors !=='undefined' && errors.length> 0) { %>
+                <div class="bg-red-50 border border-red-300 text-red-700 px-4 py-3 rounded-lg mb-4">
+                  <strong class="block font-semibold mb-2">Error</strong>
+                  <ul class="list-disc list-inside space-y-1">
+                    <% errors.forEach(error=> { %>
+                      <li>
+                        <%= error.msg %>
+                      </li>
+                      <% }) %>
+                  </ul>
+                </div>
+                <% } %>
 
+            </div>
             <!-- Name -->
             <div class="flex gap-3">
               <input type="text" name="firstName" placeholder="First Name" required class="w-1/2 input-style" />
@@ -23,12 +38,12 @@
             </div>
 
             <!-- Email -->
-            <input type="email" name="username" placeholder="Email address" required class="w-full input-style" />
+            <input type="email" name="email" placeholder="Email address" required class="w-full input-style" />
 
             <!-- Password -->
             <input type="password" name="password" placeholder="Password" required class="w-full input-style" />
 
-            <input type="password" name="conformpassword" placeholder="Confirm Password" required
+            <input type="password" name="confirmPassword" placeholder="Confirm Password" required
               class="w-full input-style" />
 
             <!-- User Type -->
