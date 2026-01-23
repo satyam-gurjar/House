@@ -1,13 +1,19 @@
 const bcrypt = require('bcryptjs');
 const { check, validationResult } = require('express-validator');
-const User = require('../models/user')
+const User = require('../models/user');
+const user = require('../models/user');
+
+
+
 exports.getLogin = (req, res, next) => {
   res.render('auth/login', {
     pageTitle: 'Login',
     currentPage: 'login',
     isLoggedIn: false,
     errors: [],
-    oldInput: "",
+    oldInput: {email: ''},
+    user: {},
+
   });
 }
 
@@ -18,6 +24,7 @@ exports.getSignUp = (req, res, next) => {
     isLoggedIn: false,
     errors: [],
     oldInput: "",
+    user: {},
   });
 }
 
@@ -30,7 +37,8 @@ exports.postLogin = async (req, res, next) => {
         currentPage: 'login',
         isLoggedIn: false,
         errors: ['user does not exist'],
-        oldInput: {email}
+        oldInput: {email},
+        user: {},
       });
   }
   const isMatch = await bcrypt.compare(password, user.password);
@@ -40,7 +48,8 @@ exports.postLogin = async (req, res, next) => {
         currentPage: 'login',
         isLoggedIn: false,
         errors: ['Invalid Password'],
-        oldInput: {email}
+        oldInput: {email},
+        user: {},
       });
   }
   // Avoid storing mongoose document (with BSON types) in the session to prevent BSON version mismatch errors
@@ -117,7 +126,8 @@ exports.postSignUp = [
         currentPage: 'signup',
         isLoggedIn: false,
         errors: errors.array().map(err => err.msg),
-        oldInput: {firstName, lastName, email, password, userType}
+        oldInput: {firstName, lastName, email, password, userType},
+        user: {},
       })
     }
 
@@ -139,7 +149,8 @@ exports.postSignUp = [
           email,
           password,
           userType
-        }
+        },
+        user: {},
       })
     })
 

@@ -11,56 +11,60 @@
     <nav class="space-x-8 text-gray-600 font-medium">
 
       <% if (isLoggedIn) { %>
+        <% if (user && user.userType==="guest") { %>
+          <a href="/" class="<%= currentPage === 'index' ? 'text-red-500 font-semibold' : 'hover:text-red-500' %>">
+            Home
+          </a>
 
-        <a href="/" class="<%= currentPage === 'index' ? 'text-red-500 font-semibold' : 'hover:text-red-500' %>">
-          Home
-        </a>
+          <a href="/favourites"
+            class="<%= currentPage === 'Favourites' ? 'text-red-500 font-semibold' : 'hover:text-red-500' %>">
+            Favourite
+          </a>
 
-        <a href="/favourites"
-          class="<%= currentPage === 'Favourites' ? 'text-red-500 font-semibold' : 'hover:text-red-500' %>">
-          Favourite
-        </a>
+          <a href="/bookings"
+            class="<%= currentPage === 'bookings' ? 'text-red-500 font-semibold' : 'hover:text-red-500' %>">
+            Bookings
+          </a>
 
-        <a href="/homes" class="<%= currentPage === 'Home' ? 'text-red-500 font-semibold' : 'hover:text-red-500' %>">
-          Homes-list
-        </a>
+          <% } else { %>
+            <a href="/homes"
+              class="<%= currentPage === 'Home' ? 'text-red-500 font-semibold' : 'hover:text-red-500' %>">
+              Homes-list
+            </a>
 
-        <a href="/host/add-home"
-          class="<%= currentPage === 'AddHome' ? 'text-red-500 font-semibold' : 'hover:text-red-500' %>">
-          Add
-        </a>
+            <a href="/host/add-home"
+              class="<%= currentPage === 'AddHome' ? 'text-red-500 font-semibold' : 'hover:text-red-500' %>">
+              Add
+            </a>
 
-        <a href="/bookings"
-          class="<%= currentPage === 'bookings' ? 'text-red-500 font-semibold' : 'hover:text-red-500' %>">
-          Bookings
-        </a>
 
-        <a href="/host/host-home-list"
-          class="<%= currentPage === 'host-homes' ? 'text-red-500 font-semibold' : 'hover:text-red-500' %>">
-          Host-Home-list
-        </a>
+            <a href="/host/host-home-list"
+              class="<%= currentPage === 'host-homes' ? 'text-red-500 font-semibold' : 'hover:text-red-500' %>">
+              Host-Home-list
+            </a>
+            <% } %>
 
-        <!-- Logout -->
-        <form action="/logout" method="POST" class="inline">
-          <button class="hover:text-red-500">Logout</button>
-        </form>
+              <!-- Logout -->
+              <form action="/logout" method="POST" class="inline">
+                <button class="hover:text-red-500">Logout</button>
+              </form>
 
-        <% } else { %>
+              <% } else { %>
 
-          <!-- Login -->
+                <!-- Login -->
 
-          <a href="/signup" class="px-4 py-2 rounded-xl border border-red-500 text-red-500
+                <a href="/signup" class="px-4 py-2 rounded-xl border border-red-500 text-red-500
    <%= currentPage === 'signup' ? 'font-semibold bg-red-100' : 'hover:bg-red-100' %>">
-            SignUp
-          </a>
+                  SignUp
+                </a>
 
-          <a href="/login" class="px-4 py-2 rounded-md bg-red-500 text-white
+                <a href="/login" class="px-4 py-2 rounded-md bg-red-500 text-white
    <%= currentPage === 'login' ? 'font-semibold' : 'hover:bg-red-600' %>">
-            Login
-          </a>
+                  Login
+                </a>
 
 
-          <% } %>
+                <% } %>
 
     </nav>
   </div>
