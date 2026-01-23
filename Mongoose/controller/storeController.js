@@ -1,5 +1,5 @@
-const Favourite = require('../models/favourite');
 const Home = require('../models/homes');
+const User = require('../models/user');
 
 
 exports.getIndex = (req, res, next) => {
@@ -36,20 +36,25 @@ exports.getBookings = (req, res, next) => {
   });
 };
 
-exports.getFavouriteList = (req, res, next) => {
-  Favourite.find()
-  .populate('houseId')
-  .then(favourites => {
-    const favouriteHomes = favourites.map((fav) => fav.houseId);
+exports.getFavouriteList = async (req, res, next) => {
+  const userId = req.session.user._id;
+  const user = await  User.findById(userId).populate('favourites');
+  console.log("User",user);
 
-      res.render('store/Favourite-list', {
-        favouriteHomes: favouriteHomes,
-        pageTitle: 'My Favourites',
-        currentPage: 'Favourites',
-        isLoggedIn: req.session.isLoggedIn,
-        user: req.session.user,
-      })
-    });
+
+  // Favourite.find()
+  // .populate('houseId')
+  // .then(favourites => {
+  //   const favouriteHomes = favourites.map((fav) => fav.houseId);
+
+  //     res.render('store/Favourite-list', {
+  //       favouriteHomes: favouriteHomes,
+  //       pageTitle: 'My Favourites',
+  //       currentPage: 'Favourites',
+  //       isLoggedIn: req.session.isLoggedIn,
+  //       user: req.session.user,
+  //     })
+  //   });
 }
 
 

@@ -11,7 +11,7 @@
     <nav class="space-x-8 text-gray-600 font-medium">
 
       <% if (isLoggedIn) { %>
-        <% if (user && user.userType==="guest") { %>
+        <% if (user && user.userType==="guest" ) { %>
           <a href="/" class="<%= currentPage === 'index' ? 'text-red-500 font-semibold' : 'hover:text-red-500' %>">
             Home
           </a>
@@ -26,11 +26,12 @@
             Bookings
           </a>
 
+          <a href="/homes" class="<%= currentPage === 'Home' ? 'text-red-500 font-semibold' : 'hover:text-red-500' %>">
+            Homes-list
+          </a>
+
           <% } else { %>
-            <a href="/homes"
-              class="<%= currentPage === 'Home' ? 'text-red-500 font-semibold' : 'hover:text-red-500' %>">
-              Homes-list
-            </a>
+
 
             <a href="/host/add-home"
               class="<%= currentPage === 'AddHome' ? 'text-red-500 font-semibold' : 'hover:text-red-500' %>">
