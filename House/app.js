@@ -1,10 +1,12 @@
+require('dotenv').config();
 const path = require('path');
+
 
 //external module
 const express = require('express');
 const session = require('express-session');
 const mongoDBStore = require('connect-mongodb-session')(session);
-const DB_PATH = "mongodb+srv://root:root@airbnb1.2hpergh.mongodb.net/airbnb?retryWrites=true&w=majority";
+const DB_PATH = process.env.DB_PATH;
 
 //local mudule
 const storeRouter = require('./routes/storeRouter');
@@ -29,17 +31,22 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(rootDir, 'public')));
 
 app.use(session({
-  secret:'this is secret txt',
+  secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: true,
-  store
+  saveUninitialized: false,   // ✅ KEEP THIS
+  store: store,
+  cookie: {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    maxAge: 1000 * 60 * 60 * 24
+  }
 }));
 
-app.use((req,res,next) => {
-  req.session.isLoggedIn = req.session.isLoggedIn || false;
-  req.session.user = req.session.user || null;
+app.use((req, res, next) => {
+  res.locals.isLoggedIn = req.session.isLoggedIn || false;
+  res.locals.user = req.session.user || null;
   next();
-})
+});
 
 app.use(authRouter);
 app.use(storeRouter);
@@ -54,15 +61,12 @@ app.use('/host', (req,res,next) => {
 app.use('/host', hostRouter);
 app.use(errorsControllers.pageNotFound);
 
-const PORT = 3000;
-
-
-
+const PORT = process.env.PORT;
 
 mongoose.connect(DB_PATH).then(() => {
   app.listen(PORT, () => {
     console.log("Connect to MongoDB");
-    console.log(`Server running at http://127.0.0.1:${PORT}`);
+    console.log(`Server running a${PORT}`);
   });
 }).catch( err => {
 console.log('error while connecting to mongo',err);
