@@ -33,20 +33,15 @@ app.use(express.static(path.join(rootDir, 'public')));
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: false,   // ✅ KEEP THIS
-  store: store,
-  cookie: {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    maxAge: 1000 * 60 * 60 * 24
-  }
+  saveUninitialized: true,
+  store
 }));
 
-app.use((req, res, next) => {
-  res.locals.isLoggedIn = req.session.isLoggedIn || false;
-  res.locals.user = req.session.user || null;
+app.use((req,res,next) => {
+  req.session.isLoggedIn = req.session.isLoggedIn || false;
+  req.session.user = req.session.user || null;
   next();
-});
+})
 
 app.use(authRouter);
 app.use(storeRouter);
